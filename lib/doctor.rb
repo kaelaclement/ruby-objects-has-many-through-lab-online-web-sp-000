@@ -7,8 +7,8 @@ class Doctor
 
   def initialize(name)
     @name = name
-    @@all << self
     @appointments = []
+    @@all << self
   end
 
   def self.all
@@ -19,9 +19,13 @@ class Doctor
     @appointments
   end
 
-  def new_appointment(date, patient)
+  def new_appointment(patient, date)
     Appointment.new(patient, self, date)
-    binding.pry
+  end
+
+  def patients
+    patients = Appointment.all.map{|appointment| appointment.patient}
+    patients.uniq
   end
 
 end
