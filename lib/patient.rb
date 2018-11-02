@@ -22,7 +22,7 @@ class Patient
   end
 
   def doctors
-    doctors = appointments.map{|appointment| appointment.patient}
+    doctors = Appointment.all.select{|appointment| appointment.doctor if appointment.patient == self}
     doctors.uniq
   end
 end
