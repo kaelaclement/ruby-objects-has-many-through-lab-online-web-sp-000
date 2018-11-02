@@ -23,6 +23,6 @@ class Patient
 
   def doctors
     doctors = appointments.map{|appointment| appointment.patient}
-    patients.uniq
+    doctors.uniq
   end
 end
