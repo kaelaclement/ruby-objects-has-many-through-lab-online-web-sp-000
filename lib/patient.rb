@@ -22,7 +22,7 @@ class Patient
   end
 
   def doctors
-    doctors = appointments.map{|appointment| appointment.doctor}
+    doctors = Appointment.all.map{|appointment| appointment.doctor}
     doctors
   end
 end
