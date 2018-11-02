@@ -5,4 +5,8 @@ class Patient
     @name = name
     @appointments = []
   end
+
+  def appointments
+    @appointments
+  end
 end
