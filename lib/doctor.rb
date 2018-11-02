@@ -6,6 +6,7 @@ class Doctor
   def initialize(name)
     @name = name
     @@all << self
+    @appointments = []
   end
 
   def self.all
@@ -16,8 +17,4 @@ class Doctor
     Appointment.new(patient, self, date)
   end
 
-  def appointments
-    appointments = Appointment.all.map{|appointment| appointment.doctor}
-    appointments
-  end
 end
